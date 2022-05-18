@@ -1,20 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+{{>/layout/header}}
 
-<head>
-    <!-- 헤더 시작 -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- 헤더 끝 -->
-</head>
+<!-- 회원정보 수정 폼 시작 -->
+<div class="container mt-3">
+    <form>
+        <div class="mb-3 mt-3">
+            <label>Username:</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+        </div>
+        <div class="mb-3">
+            <label>Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+        </div>
+        <div class="mb-3">
+            <label>Password Check:</label>
+            <input type="password" class="form-control" id="password-check" placeholder="Enter password check">
+        </div>
+        <div class="mb-3">
+            <label>Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        </div>
+        <button type="submit" class="btn btn-success">수정하기</button>
+    </form>
+</div>
+<!-- 회원정보 수정 폼 끝 -->
 
-
-<body>
-    <!-- 바디 시작 -->
-    <h1>회원정보 수정 및 탈퇴 페이지 입니다.</h1>
-    <!-- 바디 끝 -->
-</body>
-
-</html>
+{{>/layout/footer}}
