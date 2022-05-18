@@ -1,0 +1,13 @@
+/* 회원가입 에러창 */
+
+.my_error_box {
+    background-color: palevioletred;
+    font-style: italic;
+    padding: 10px;
+} 
+
+/* 태그 숨기기 */
+
+.my_hidden {
+    display: none;
+}
