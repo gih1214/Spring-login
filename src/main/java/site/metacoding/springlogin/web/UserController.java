@@ -24,6 +24,12 @@ public class UserController {
 
     private final UserService userService;
 
+    // 로그인 성공 시 메인 페이지 폼
+    @GetMapping("/user/{id}")
+    public String main() {
+        return "/main";
+    }
+
     // 회원가입 폼
     @GetMapping("/join-form")
     public String joinForm() {
