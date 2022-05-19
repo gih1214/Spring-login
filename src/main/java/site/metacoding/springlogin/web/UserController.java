@@ -60,10 +60,12 @@ public class UserController {
     }
 
     // 회원수정 폼
-    @GetMapping("/update-form")
+    @GetMapping("/user/{id}/update-form")
     public String updateForm() {
         return "/updateForm";
     }
+
+    // 로그아웃
 
     // 회원가입 시 유저아이디 중복체크
     @GetMapping("/api/user/username-same-check")
