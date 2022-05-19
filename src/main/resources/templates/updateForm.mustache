@@ -1,27 +1,66 @@
 {{>/layout/header}}
 
+<input id="id" type="hidden" value="{{principal.id}}">
+
 <!-- 회원정보 수정 폼 시작 -->
 <div class="container mt-3">
+    <br />
+    <h1>회원정보 수정</h1>
     <form>
         <div class="mb-3 mt-3">
             <label>Username:</label>
-            <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+            <input type="text" class="form-control" id="username" value="{{user.username}}" readonly>
         </div>
         <div class="mb-3">
             <label>Password:</label>
-            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+            <input type="password" class="form-control" id="password" placeholder="Enter password">
         </div>
         <div class="mb-3">
             <label>Password Check:</label>
             <input type="password" class="form-control" id="same-password" placeholder="Enter password check">
         </div>
         <div class="mb-3">
-            <label>Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            <label>Address:</label>
+            <input type="text" class="form-control" id="addr" placeholder="Enter Address" value="{{user.addr}}">
         </div>
-        <button type="submit" class="btn btn-success">수정하기</button>
+        <button id="btn-update" type="button" class="btn btn-success">수정하기</button>
+        <button type="button" class="btn btn-danger">탈퇴하기</button>
     </form>
 </div>
 <!-- 회원정보 수정 폼 끝 -->
+
+<script>
+    // 회원 정보 수정 버튼 이벤트 리스너
+    $("#btn-update").click(() => {
+        update();
+    });
+
+    // 회원 정보 수정 함수
+    async function update() {
+        let id = $("#id").val();
+
+        let updateDto = {
+            password: $("#password").val(),
+            addr: $("#addr").val()
+        }
+
+        let response = await fetch(`/s/api/user/${id}`, {
+            method: "PUT",
+            body: JSON.stringify(updateDto),
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            }
+        });
+        // console.log(response);
+
+        alert("수정됐는데 나 왜 안 떠?");
+        if (response.status == 200) {
+            alert("업데이트 성공");
+            location.href = `/s/user/${id}/update-form`;
+        } else {
+            alert("업데이트 실패");
+        }
+    }
+</script>
 
 {{>/layout/footer}}
