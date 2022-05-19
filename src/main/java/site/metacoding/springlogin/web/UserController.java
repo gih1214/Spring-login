@@ -61,15 +61,8 @@ public class UserController {
 
     // 회원가입 시 유저아이디 중복체크
     @GetMapping("/api/user/username-same-check")
-    public ResponseEntity<?> userIdSameCheck(String username) {
+    public ResponseEntity<?> usernameSameCheck(String username) {
         boolean isNotSame = userService.유저아이디중복체크(username); // true (같지 않다)
-        return new ResponseEntity<>(isNotSame, HttpStatus.OK);
-    }
-
-    // 회원가입 시 이메일 중복체크
-    @GetMapping("/api/user/email-same-check")
-    public ResponseEntity<?> emailSameCheck(String email) {
-        boolean isNotSame = userService.이메일중복체크(email); // true (같지 않다)
         return new ResponseEntity<>(isNotSame, HttpStatus.OK);
     }
 }

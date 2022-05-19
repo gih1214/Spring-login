@@ -1,7 +1,7 @@
 /* 회원가입 에러창 */
 
 .my_error_box {
-    background-color: palevioletred;
+    background-color: rgb(253, 218, 177);
     font-style: italic;
     padding: 10px;
 } 

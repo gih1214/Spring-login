@@ -1,6 +1,5 @@
 package site.metacoding.springlogin.web.dto;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -24,16 +23,15 @@ public class JoinReqDto {
     @NotBlank
     private String password;
 
-    @Size(min = 8, max = 60)
+    @Size(min = 10, max = 300)
     @NotBlank
-    @Email
-    private String email;
+    private String addr;
 
     public User toEntity() {
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
-        user.setEmail(email);
+        user.setAddr(addr);
         return user;
     }
 }

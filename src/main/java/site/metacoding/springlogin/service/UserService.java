@@ -37,15 +37,4 @@ public class UserService {
             return true; // 아이디 없으면 true
         }
     }
-
-    // 회원가입 시 이메일 중복체크하기
-    public boolean 이메일중복체크(String email) {
-        Optional<User> userOp = userRepository.findByEmail(email);
-
-        if (userOp.isPresent()) {
-            return false; // 이미 이메일 있으면 false
-        } else {
-            return true; // 이메일 없으면 true
-        }
-    }
 }

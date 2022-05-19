@@ -28,6 +28,6 @@ public class User {
     private String password;
 
     // 도로명 주소 API 사용하기
-    @Column(length = 200, nullable = false)
-    private String email;
+    @Column(length = 300, nullable = false)
+    private String addr;
 }
